@@ -97,15 +97,11 @@ class lcd:
 #  def display_string(self, string, line):
   def display_string(self, string, line):
     """display a string on the given line of the display, 1 or 2, string is truncated to 20 chars and centred"""
-    centered_string = string.center(20)
+    centered_string = string.center(16)
     if line == 1:
       self.write(0x80)
     if line == 2:
       self.write(0x94)
-    if line == 3:
-      self.write(0xC0)
-    if line == 4:
-      self.write(0xD4) 
     for char in centered_string:
       self.write(ord(char), Rs)
 
